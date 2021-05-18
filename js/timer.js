@@ -5,8 +5,7 @@ const displayMins = document.querySelector('span[data-value="mins"]');
 const displaySecs = document.querySelector('span[data-value="secs"]');
 
 class reverseTimer {
-  constructor({ selector, targetDate }) {
-    this.selector = selector;
+  constructor({ targetDate }) {
     this.targetDate = targetDate;
   };
 
@@ -42,7 +41,6 @@ class reverseTimer {
 }
 
 const timer = new reverseTimer({
-  selector: "#timer-1",
   targetDate: new Date("January 1, 2022"),
 });
 
