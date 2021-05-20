@@ -1,12 +1,19 @@
-const displayTimer = document.querySelector('#timer-1');
 const displayDays = document.querySelector('span[data-value="days"]');
 const displayHours = document.querySelector('span[data-value="hours"]');
 const displayMins = document.querySelector('span[data-value="mins"]');
 const displaySecs = document.querySelector('span[data-value="secs"]');
 
 class reverseTimer {
-  constructor({ targetDate }) {
+  constructor({ selector, targetDate }) {
+    this.selector = document.querySelector(selector);
     this.targetDate = targetDate;
+
+    this.refs = {
+      days: document.querySelector(this.selector.displayDays),
+      hours: document.querySelector(this.selector.displayHours),
+      mins: document.querySelector(this.selector.displayMins),
+      secs: document.querySelector(this.selector.displaySecs),
+    }
   };
 
   start() {
@@ -41,6 +48,7 @@ class reverseTimer {
 }
 
 const timer = new reverseTimer({
+  selector: "#timer-1",
   targetDate: new Date("January 1, 2022"),
 });
 
